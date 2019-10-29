@@ -1,8 +1,12 @@
 import React from 'react';
 
-const Song = (props) => {
+const Song = ({children, artist, index}) => {
   return (
-    <h2>this is Song</h2>
+    <li className="song">
+      <h4>{ children }</h4>
+      <p>{ artist }</p>
+
+    </li>
   )
 }
 

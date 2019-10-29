@@ -4,9 +4,9 @@ import SongList from '../components/SongList'
 class SongContainer extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
-      top_20_chart: [],
-      currentSong: null
+      songs: []
     }
   }
 
@@ -15,14 +15,14 @@ class SongContainer extends Component {
 
     fetch(url)
       .then(res => res.json())
-      .then(chart => this.setState({ top_20_chart: chart }))
+      .then(chart => this.setState({ songs: chart.feed.entry }))
       .catch(err => console.error(err));
   }
 
-
   render() {
     return(
-      <SongList />
+      // <p>this is container</p>
+      <SongList songs={ this.state.songs } />
     );
   }
 }
