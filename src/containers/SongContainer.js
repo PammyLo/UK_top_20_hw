@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
+import SongList from '../components/SongList'
 
 class SongContainer extends Component {
   render() {
     return(
-      <h1> this is SongContainer </h1>
+      <SongList /> 
     );
   }
 }
